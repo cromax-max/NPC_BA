@@ -1,0 +1,33 @@
+plugins {
+    id 'io.qameta.allure' version '2.11.2'
+    id 'java'
+}
+
+group 'ba.npc'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.8.2',
+            'org.seleniumhq.selenium:selenium-java:4.8.0',
+            'io.github.bonigarcia:webdrivermanager:5.3.2',
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.hamcrest:hamcrest:2.2')
+    testRuntimeOnly(
+            'org.junit.jupiter:junit-jupiter:5.8.2',
+            'org.slf4j:slf4j-simple:1.7.32'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
